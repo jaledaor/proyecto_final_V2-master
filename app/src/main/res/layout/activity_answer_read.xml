@@ -87,11 +87,6 @@
             android:text="@string/volver"
             android:id="@+id/btn_volver_r"/>
         </LinearLayout>
-
-
-
-
-
     </FrameLayout>
 </LinearLayout>
 
