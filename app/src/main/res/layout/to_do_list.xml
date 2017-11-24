@@ -20,7 +20,7 @@
             <Button
                 android:id="@+id/task_btn"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:contentDescription="@string/responder"
                 android:background="@drawable/ic_question_answer_white" />
@@ -29,7 +29,7 @@
                 android:id="@+id/task_title"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1.8"
                 android:text="@string/app_name"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
@@ -38,7 +38,7 @@
                 android:id="@+id/task_answer"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1.8"
                 android:text="@string/app_name"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
@@ -47,7 +47,7 @@
                 android:id="@+id/task_category"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2"
+                android:layout_weight="1.4"
                 android:text="@string/app_name"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
@@ -56,7 +56,7 @@
                 android:id="@+id/task_date"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2"
+                android:layout_weight="1.4"
                 android:contentDescription="@string/app_name"
                 android:text="@string/fecha_question"
                 android:textColor="@color/colorBlack"/>
