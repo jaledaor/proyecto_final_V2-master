@@ -18,42 +18,48 @@
             android:layout_height="wrap_content"
             android:hint="@string/pregunta_dialog"
             android:paddingTop="10dp"
-            android:id="@+id/pregunta_activity_r"/>
+            android:id="@+id/pregunta_activity_r"
+            android:textColor="@color/colorBlack"/>
 
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/category_dialog"
         android:paddingTop="40dp"
-        android:id="@+id/categoria_activity_r"/>
+        android:id="@+id/categoria_activity_r"
+        android:textColor="@color/colorBlack"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/fecha_activity"
             android:paddingTop="70dp"
-            android:id="@+id/fecha_activity_r"/>
+            android:id="@+id/fecha_activity_r"
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/respondida_activity"
             android:paddingTop="100dp"
-            android:id="@+id/respondida_activity_r"/>
+            android:id="@+id/respondida_activity_r"
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/uid_preg_activity"
             android:paddingTop="130dp"
-            android:id="@+id/uid_preg_activity_r"/>
+            android:id="@+id/uid_preg_activity_r"
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/uid_resp_activity"
             android:paddingTop="160dp"
-            android:id="@+id/uid_resp_activity_r"/>
+            android:id="@+id/uid_resp_activity_r"
+            android:textColor="@color/colorBlack"/>
 
         <TextView
             android:id="@+id/respuesta_activity_r"
