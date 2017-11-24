@@ -59,6 +59,7 @@ public class AnswerActivity extends AppCompatActivity {
     String nombre_usuario_pregunta="";
     String nombre_usuario_responde="";
     String pregunta_r = "";
+    String respuesta_r="";
     String categoria_r ="";
     String fecha_r ="";
     String uid_preg_r ="";
@@ -114,38 +115,47 @@ public class AnswerActivity extends AppCompatActivity {
         uid_preg_r = intent.getStringExtra("uid_preg_review");
         uid_resp_r = intent.getStringExtra("uid_resp_review");
         respondida_r = intent.getBooleanExtra("respondida_dialog", false);
+        respuesta_r = intent.getStringExtra("respuesta_review");
 
         reference_control_2.child(uid_preg_r).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 nombre_usuario_pregunta=dataSnapshot.child("nombres").getValue(String.class);
+                uid_preg_screen.setText("user: "+nombre_usuario_pregunta);
+                Toast.makeText(AnswerActivity.this, "Uid_1"+nombre_usuario_pregunta, Toast.LENGTH_SHORT).show();
+                uid_preg_screen.setText("Usuario Que Realizó la Pregunta: "+nombre_usuario_pregunta);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
+        if(!uid_resp_r.equals("")) {
+            reference_control_2.child(uid_resp_r).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    nombre_usuario_responde = dataSnapshot.child("nombres").getValue(String.class);
+                    uid_resp_screen.setText("Usuario Que Respondió la Pregunta: " + nombre_usuario_responde);
+                }
 
-        reference_control_2.child(uid_resp_r).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                nombre_usuario_responde=dataSnapshot.child("nombres").getValue(String.class);
-            }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
+                }
+            });
+        }else{
+            uid_resp_screen.setText("Usuario Que Respondió la Pregunta: Aun No Se ha Respondido!");
+        }
 
 
         pregunta_screen.setText("Pregunta: "+pregunta_r);
         catergoria_screen.setText("Categoria: "+categoria_r);
         fecha_screen.setText("Fecha: "+fecha_r);
         respondida_screen.setText("¿Ya Fue Respondída? " + respondida_r);
-        uid_preg_screen.setText("Uid Usuario Que Creó la Pregunta: "+uid_preg_r);
-        uid_resp_screen.setText("Uid Usuario Que Respondió la Pregunta: "+uid_resp_r);
+        /*uid_preg_screen.setText("Uid Usuario Que Creó la Pregunta: "+uid_preg_r);
+        uid_resp_screen.setText("Uid Usuario Que Respondió la Pregunta: "+uid_resp_r);*/
 
 
         btn_responder.setOnClickListener(new View.OnClickListener() {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -38,14 +39,14 @@ public class AnswerActivity_read extends AppCompatActivity {
     public Boolean respondida = false;
 
 
-    String nombre_usuario_pregunta="";
-    String nombre_usuario_responde="";
-    String pregunta_r = "";
-    String categoria_r ="";
-    String fecha_r ="";
-    String uid_preg_r ="";
-    String uid_resp_r ="";
-    String respuesta_r ="";
+    public String nombre_usuario_pregunta="";
+    public String nombre_usuario_responde="";
+    public String pregunta_r = "";
+    public String categoria_r ="";
+    public String fecha_r ="";
+    public String uid_preg_r ="";
+    public String uid_resp_r ="";
+    public String respuesta_r ="";
     boolean respondida_r=false;
 
     String respuesta_insert="";
@@ -57,13 +58,13 @@ public class AnswerActivity_read extends AppCompatActivity {
     private List<Task> allTask;
 
 
-    TextView pregunta_screen;
-    TextView catergoria_screen;
-    TextView fecha_screen;
-    TextView respondida_screen;
-    TextView uid_preg_screen;
-    TextView uid_resp_screen;
-    TextView respuesta_screen;
+    TextView pregunta_screen_r;
+    TextView catergoria_screen_r;
+    TextView fecha_screen_r;
+    TextView respondida_screen_r;
+    TextView uid_preg_screen_r;
+    TextView uid_resp_screen_r;
+    TextView respuesta_screen_r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +72,13 @@ public class AnswerActivity_read extends AppCompatActivity {
         setContentView(R.layout.activity_answer_read);
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
 
-        pregunta_screen = findViewById(R.id.pregunta_activity_r);
-        catergoria_screen = findViewById(R.id.categoria_activity_r);
-        fecha_screen = findViewById(R.id.fecha_activity_r);
-        respondida_screen = findViewById(R.id.respondida_activity_r);
-        uid_preg_screen = findViewById(R.id.uid_preg_activity_r);
-        uid_resp_screen = findViewById(R.id.uid_resp_activity_r);
-        respuesta_screen = findViewById(R.id.respuesta_activity_r);
+        pregunta_screen_r = findViewById(R.id.pregunta_activity_r);
+        catergoria_screen_r = findViewById(R.id.categoria_activity_r);
+        fecha_screen_r = findViewById(R.id.fecha_activity_r);
+        respondida_screen_r = findViewById(R.id.respondida_activity_r);
+        uid_preg_screen_r = findViewById(R.id.uid_preg_activity_r);
+        uid_resp_screen_r = findViewById(R.id.uid_resp_activity_r);
+        respuesta_screen_r = findViewById(R.id.respuesta_activity_r);
 
 
         setSupportActionBar(toolbar);
@@ -104,40 +105,48 @@ public class AnswerActivity_read extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 nombre_usuario_pregunta=dataSnapshot.child("nombres").getValue(String.class);
+                uid_preg_screen_r.setText("user: "+nombre_usuario_pregunta);
+                uid_preg_screen_r.setText("Usuario Que Realizó la Pregunta: "+nombre_usuario_pregunta);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
+        if(!uid_resp_r.equals("")) {
+            reference_control_2.child(uid_resp_r).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    nombre_usuario_responde = dataSnapshot.child("nombres").getValue(String.class);
+                    uid_resp_screen_r.setText("Usuario Que Respondió la Pregunta: " + nombre_usuario_responde);
+                    respuesta_screen_r.setText("Respuesta: "+respuesta_r);
+                }
 
-        reference_control_2.child(uid_resp_r).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                nombre_usuario_responde=dataSnapshot.child("nombres").getValue(String.class);
-            }
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        }else{
+            uid_resp_screen_r.setText("Usuario Que Respondió la Pregunta: Aun No Se ha Respondido!");
+            respuesta_screen_r.setText("Respuesta: Aun No Se ha Respondido!");
+        }
 
-            }
-        });
+        pregunta_screen_r.setText("Pregunta: "+pregunta_r);
+        catergoria_screen_r.setText("Categoria: "+categoria_r);
+        fecha_screen_r.setText("Fecha: "+fecha_r);
+        respondida_screen_r.setText("¿Ya Fue Respondída? " + respondida_r);
+        /*uid_preg_screen_r.setText("user: "+nombre_usuario_pregunta);
+        uid_resp_screen_r.setText("Uid Usuario Que Respondió la Pregunta: "+nombre_usuario_responde);*/
 
-
-        pregunta_screen.setText("Pregunta: "+pregunta_r);
-        catergoria_screen.setText("Categoria: "+categoria_r);
-        fecha_screen.setText("Fecha: "+fecha_r);
-        respondida_screen.setText("¿Ya Fue Respondída? " + respondida_r);
-        uid_preg_screen.setText("Uid Usuario Que Creó la Pregunta: "+uid_preg_r);
-        uid_resp_screen.setText("Uid Usuario Que Respondió la Pregunta: "+uid_resp_r);
-        respuesta_screen.setText("Respuesta: "+respuesta_r);
 
         btn_responder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                respuesta_insert = respuesta_screen.getText().toString();
+                respuesta_insert = respuesta_screen_r.getText().toString();
 
                 DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Tareas");
                 Query applesQuery = ref.orderByChild("pregunta").equalTo(pregunta_r);

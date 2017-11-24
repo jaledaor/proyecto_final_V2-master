@@ -68,37 +68,56 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
         task_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(!taskObject.get(getAdapterPosition()).getUid_preg().equals(uid)) {
+                    if (taskObject.get(getAdapterPosition()).isRespondida() == false) {
+                        Intent intent = new Intent(v.getContext(), AnswerActivity.class);
+                        question = taskObject.get(getAdapterPosition()).getPregunta();
+                        category_dialog = taskObject.get(getAdapterPosition()).getCategoria();
+                        fecha_dialog = taskObject.get(getAdapterPosition()).getFecha();
+                        uid_preg_dialog = taskObject.get(getAdapterPosition()).getUid_preg();
+                        uid_resp_dialog = taskObject.get(getAdapterPosition()).getUid_resp();
+                        respondida_dialog = taskObject.get(getAdapterPosition()).isRespondida();
+                        respuesta_dialog = taskObject.get(getAdapterPosition()).getRespuesta();
 
-                if(taskObject.get(getAdapterPosition()).isRespondida()==false){
-                Intent intent = new Intent(v.getContext(), AnswerActivity.class);
-                question = taskObject.get(getAdapterPosition()).getPregunta();
-                category_dialog = taskObject.get(getAdapterPosition()).getCategoria();
-                fecha_dialog = taskObject.get(getAdapterPosition()).getFecha();
-                uid_preg_dialog = taskObject.get(getAdapterPosition()).getUid_preg();
-                uid_resp_dialog=taskObject.get(getAdapterPosition()).getUid_resp();
-                respondida_dialog=taskObject.get(getAdapterPosition()).isRespondida();
-                respuesta_dialog=taskObject.get(getAdapterPosition()).getRespuesta();
 
+                        intent.putExtra("pregunta_review", question);
+                        intent.putExtra("categoria_review", category_dialog);
+                        intent.putExtra("fecha_review", fecha_dialog);
+                        intent.putExtra("uid_preg_review", uid_preg_dialog);
+                        intent.putExtra("uid_resp_review", uid_resp_dialog);
+                        intent.putExtra("respondida_review", respondida_dialog);
+                        intent.putExtra("respuesta_review", respuesta_dialog);
 
+                        v.getContext().startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(v.getContext(), AnswerActivity_read.class);
+                        question = taskObject.get(getAdapterPosition()).getPregunta();
+                        category_dialog = taskObject.get(getAdapterPosition()).getCategoria();
+                        fecha_dialog = taskObject.get(getAdapterPosition()).getFecha();
+                        uid_preg_dialog = taskObject.get(getAdapterPosition()).getUid_preg();
+                        uid_resp_dialog = taskObject.get(getAdapterPosition()).getUid_resp();
+                        respondida_dialog = taskObject.get(getAdapterPosition()).isRespondida();
+                        respuesta_dialog = taskObject.get(getAdapterPosition()).getRespuesta();
 
-                intent.putExtra("pregunta_review", question);
-                intent.putExtra("categoria_review", category_dialog);
-                intent.putExtra("fecha_review", fecha_dialog);
-                intent.putExtra("uid_preg_review", uid_preg_dialog);
-                intent.putExtra("uid_resp_review", uid_resp_dialog);
-                intent.putExtra("respondida_review", respondida_dialog);
-                intent.putExtra("respuesta_review", respuesta_dialog);
-
-                v.getContext().startActivity(intent);}
+                        intent.putExtra("pregunta_review", question);
+                        intent.putExtra("categoria_review", category_dialog);
+                        intent.putExtra("fecha_review", fecha_dialog);
+                        intent.putExtra("uid_preg_review", uid_preg_dialog);
+                        intent.putExtra("uid_resp_review", uid_resp_dialog);
+                        intent.putExtra("respondida_review", respondida_dialog);
+                        intent.putExtra("respuesta_review", respuesta_dialog);
+                        v.getContext().startActivity(intent);
+                    }
+                }
                 else{
                     Intent intent = new Intent(v.getContext(), AnswerActivity_read.class);
                     question = taskObject.get(getAdapterPosition()).getPregunta();
                     category_dialog = taskObject.get(getAdapterPosition()).getCategoria();
                     fecha_dialog = taskObject.get(getAdapterPosition()).getFecha();
                     uid_preg_dialog = taskObject.get(getAdapterPosition()).getUid_preg();
-                    uid_resp_dialog=taskObject.get(getAdapterPosition()).getUid_resp();
-                    respondida_dialog=taskObject.get(getAdapterPosition()).isRespondida();
-                    respuesta_dialog=taskObject.get(getAdapterPosition()).getRespuesta();
+                    uid_resp_dialog = taskObject.get(getAdapterPosition()).getUid_resp();
+                    respondida_dialog = taskObject.get(getAdapterPosition()).isRespondida();
+                    respuesta_dialog = taskObject.get(getAdapterPosition()).getRespuesta();
 
                     intent.putExtra("pregunta_review", question);
                     intent.putExtra("categoria_review", category_dialog);
@@ -109,12 +128,10 @@ public class RecyclerViewHolders extends RecyclerView.ViewHolder{
                     intent.putExtra("respuesta_review", respuesta_dialog);
                     v.getContext().startActivity(intent);
                 }
-
             }
 
             ;
 
         });
     }
-
 }
