@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/question_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:hint="@string/inserta_pregunta"/>
+
+    <EditText
+        android:id="@+id/category_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:hint="@string/inserta_categoria"/>
+
+
+    <!--<DatePicker
+        android:id="@+id/date_Picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />-->
+
+    <TextView
+        android:id="@+id/fecha_elegida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:hint="@string/fecha_select" />
+
+    <!--<Button
+        android:id="@+id/btn_cargar_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:text="@string/cargar_date"
+        android:textColor="@android:color/white" />-->
+
+</LinearLayout>

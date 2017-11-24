@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Firebase RealTime Database</string>
+    <string name="add_task_button">Add Task</string>
+    <string name="escribe_tarea">Que tienes que hacer ?</string>
+
+    <string name="email">E-mail</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="no_cuenta">No tienes una cuenta !!</string>
+    <string name="registro">Registro</string>
+    <string name="recordar_contrasena">Recordar Contraseña</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="salir">Salir</string>
+    <string name="nombres">Nombres</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="tienes_cuenta">Ya tienes una cuenta !!</string>
+    <string name="recordar_cuenta">Recordar Cuenta</string>
+    <string name="responder">Responder</string>
+    <string name="fecha_question">dd/mm/yy</string>
+    <string name="inserta_pregunta">Digita tu Pregunta</string>
+    <string name="inserta_categoria">Digita La Categoria</string>
+    <string name="fecha_select">mm/dd/yy</string>
+    <string name="success_login_msg">Exito</string>
+    <string name="ingreso">Ingreso al alert</string>
+    <string name="pregunta_dialog">Pregunta:</string>
+    <string name="category_dialog">Categoria:</string>
+    <string name="inserta_respuesta">Digita tu Respuesta:</string>
+    <string name="fecha_activity">Fecha:</string>
+    <string name="respondida_activity">Ya Fue Respondida:</string>
+    <string name="uid_preg_activity">Usuario Preguntó:</string>
+    <string name="uid_resp_activity">Usuario Respondió:</string>
+    <string name="volver">Volver</string>
+    <string name="respuesta_activity">Respuesta:</string>
+</resources>

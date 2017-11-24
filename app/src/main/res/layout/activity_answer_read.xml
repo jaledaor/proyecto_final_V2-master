@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="todo_jaledaor.pruebatodolist.vistas.MainActivity"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <include layout="@layout/app_bar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pregunta_dialog"
+            android:paddingTop="10dp"
+            android:id="@+id/pregunta_activity_r"/>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/category_dialog"
+        android:paddingTop="40dp"
+        android:id="@+id/categoria_activity_r"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fecha_activity"
+            android:paddingTop="70dp"
+            android:id="@+id/fecha_activity_r"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/respondida_activity"
+            android:paddingTop="100dp"
+            android:id="@+id/respondida_activity_r"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/uid_preg_activity"
+            android:paddingTop="130dp"
+            android:id="@+id/uid_preg_activity_r"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/uid_resp_activity"
+            android:paddingTop="160dp"
+            android:id="@+id/uid_resp_activity_r"/>
+
+        <TextView
+            android:id="@+id/respuesta_activity_r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/respuesta_activity"
+            android:layout_marginTop="190dp"
+            android:inputType="text"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:text="@string/responder"
+            android:id="@+id/btn_responder_r"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:text="@string/volver"
+            android:id="@+id/btn_volver_r"/>
+        </LinearLayout>
+
+
+
+
+
+    </FrameLayout>
+</LinearLayout>
+
+

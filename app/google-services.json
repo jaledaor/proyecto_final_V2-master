@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "659830006811",
+    "firebase_url": "https://questions-80065.firebaseio.com",
+    "project_id": "questions-80065",
+    "storage_bucket": "questions-80065.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659830006811:android:be900354589664fb",
+        "android_client_info": {
+          "package_name": "todo_jaledaor.pruebatodolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659830006811-0hmsqqrobs8bo8ucm07uqru75n64gg10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsEgVFOBaD66yXjx-uIYqBYm9rvPcVjHs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
